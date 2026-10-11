@@ -711,6 +711,29 @@ h1,h2,h3,h4{font-weight:500;font-variation-settings:"SOFT" 60}
 .ship-note{font-size:.76rem;color:var(--muted);text-align:center;margin:0}
 @media(max-width:1000px){.tiers{grid-template-columns:1fr 1fr}}
 @media(max-width:640px){.tiers{grid-template-columns:1fr}}
+
+/* ===== v4: página de sesiones ===== */
+.ses-info{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin:0 0 18px}
+.ses-info>div{display:flex;gap:12px;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 18px;font-size:.88rem;color:var(--muted)}
+.ses-info svg{width:22px;height:22px;flex:none;color:var(--accent);margin-top:2px}
+.ses-info b{display:block;color:var(--ink);font-size:.98rem;margin-bottom:2px}
+.ses-note{font-size:.84rem;color:var(--muted);margin:0 0 34px}
+.ses-list{display:flex;flex-direction:column;gap:28px}
+.ses{display:grid;grid-template-columns:minmax(0,340px) minmax(0,1fr);gap:36px;align-items:start;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px;box-shadow:var(--shadow)}
+.ses-ph img{width:100%;height:auto;border-radius:10px;border:1px solid var(--line)}
+.ses-body{display:flex;flex-direction:column;gap:14px;padding-top:4px;align-items:flex-start}
+.ses-body h2{font-size:clamp(1.45rem,2.7vw,1.95rem);line-height:1.12;font-weight:400}
+.ses-body p{color:var(--muted)}
+.ses-sub{font-size:.76rem;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);font-weight:700;margin-top:2px}
+.ses-ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:9px}
+.ses-ul li{display:flex;gap:12px;align-items:baseline;font-size:.95rem;color:var(--ink)}
+.ses-ul .rune{color:var(--accent);flex:none}
+.ses-chips{display:flex;flex-wrap:wrap;gap:8px}
+.ses-chips span{border:1px solid var(--line-strong);border-radius:100px;padding:.4em .95em;font-size:.88rem;color:var(--ink)}
+.ses-quote{font-family:var(--serif);font-style:italic;font-size:1.08rem;color:var(--ink)!important;border-left:2px solid var(--accent);padding-left:16px}
+.ses-cta{margin-top:6px}
+@media(max-width:1000px){.ses-info{grid-template-columns:1fr 1fr}.ses{grid-template-columns:1fr;gap:20px}.ses-ph{max-width:440px}}
+@media(max-width:640px){.ses-info{grid-template-columns:1fr}.ses{padding:16px}}
 </style>
 
 <div class="nav night" id="nav">
@@ -884,8 +907,8 @@ h1,h2,h3,h4{font-weight:500;font-variation-settings:"SOFT" 60}
 
 <section class="h-ses">
   <div class="wrap">
-    <div><span class="eyebrow">Sesiones personales</span><h2>Sanación energética, lectura de runas y acompañamiento</h2></div>
-    <div><p>Presenciales en Quilmes o a distancia. Escribís, contás qué estás necesitando y coordinamos día y horario.</p>
+    <div><span class="eyebrow">Sesiones personales</span><h2>Sesiones de sanación con Cecilia, a distancia</h2></div>
+    <div><p>Limpieza energética, Tameana, Reiki, circuitos radiónicos y péndulo hebreo. Elegís tu sesión y reservás tu turno por WhatsApp.</p>
       <div class="h-row"><a class="btn btn-ghost" href="#/sesiones" data-nav>Ver las sesiones</a></div></div>
   </div>
 </section>
@@ -958,10 +981,18 @@ h1,h2,h3,h4{font-weight:500;font-variation-settings:"SOFT" 60}
 <!-- SESIONES -->
 <div class="view" id="view-sesiones" hidden>
 <div class="wrap"><div class="page-head"><div class="crumb"><a href="#/" data-nav>Inicio</a> · Sesiones</div>
-  <h1>Sesiones de sanación y consulta</h1>
-  <p>Además de los talleres, Cecilia ofrece sesiones personales —presenciales o a distancia— para acompañarte en tu proceso: sanación energética, lectura de runas y trabajo espiritual. Escribí por WhatsApp y coordinamos día y horario.</p></div></div>
-<div class="wrap"><div class="serv-grid" id="serv-grid"></div>
-  <p class="shop-note" style="margin-top:34px">¿No ves lo que buscás? Escribinos y te contamos qué sesión se adapta mejor a lo que estás necesitando.</p>
+  <h1>Sesiones de sanación</h1>
+  <p>Sesiones personales con Cecilia Alkaid, mentora: limpieza energética, Tameana, Reiki, circuitos radiónicos y péndulo hebreo. Elegí la tuya y reservá tu turno por WhatsApp.</p></div></div>
+<div class="wrap">
+  <div class="ses-info">
+    <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.2 3 14.8 0 18M12 3c-3 3.2-3 14.8 0 18"/></svg><span><b>A distancia</b>Desde donde estés</span></div>
+    <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span><b>45 a 60 minutos</b>Duración de la sesión</span></div>
+    <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg><span><b>Solo con turno previo</b>Reservás por WhatsApp</span></div>
+    <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="2"/><circle cx="12" cy="13.5" r="3.5"/><path d="M8 7l1.5-3h5L16 7"/></svg><span><b>Registro fotográfico</b>Te enviamos fotos de la plataforma de sesión</span></div>
+  </div>
+  <p class="ses-note">Las sesiones son un acompañamiento complementario y no reemplazan la atención médica ni psicológica.</p>
+  <div class="ses-list" id="ses-list"></div>
+  <p class="shop-note" style="margin-top:34px">Vamos sumando sesiones nuevas. ¿No ves lo que buscás? Escribinos y te contamos qué sesión se adapta mejor a lo que estás necesitando.</p>
 </div>
 </div>
 
@@ -1442,16 +1473,15 @@ function renderTaller(slug){const t=TALLERES.find(x=>x.slug===slug);const el=doc
       <p style="color:var(--faint);font-size:.85rem;margin-top:16px">Pago por WhatsApp: efectivo, transferencia o Mercado Pago. Con la compra de un juego de runas tenés descuento.</p>
     </div></div>`;}
 
-/* ===== SESIONES ===== */
-const SESIONES=[
- {g:"ᛚ",n:"Sesión de Reiki",d:"Armonización energética para reequilibrar cuerpo y emociones. Presencial o a distancia.",msg:"Hola! Me interesa una sesión de Reiki 🙌"},
- {g:"ᚠ",n:"Lectura / Tirada de Runas",d:"Una consulta oracular para mirar tu situación con otra claridad y encontrar tu próximo paso.",msg:"Hola! Me interesa una tirada de runas 🔮"},
- {g:"ᛊ",n:"Cirugía Astral",d:"Trabajo energético profundo sobre los cuerpos sutiles para liberar y sanar.",msg:"Hola! Me interesa una sesión de cirugía astral ✨"},
- {g:"ᚦ",n:"Limpieza y Protección Energética",d:"Limpieza de tu campo energético y de espacios, con sellado de protección.",msg:"Hola! Me interesa una limpieza y protección energética 🌿"},
- {g:"ᛗ",n:"Sanación del Linaje Materno",d:"Un trabajo para sanar la herencia emocional y espiritual del linaje.",msg:"Hola! Me interesa una sesión de sanación del linaje materno 🌙"},
- {g:"ᛜ",n:"Consulta Angelical",d:"Conexión y mensaje de tus ángeles y arcángeles para tu momento presente.",msg:"Hola! Me interesa una consulta angelical 👼"}];
-document.getElementById('serv-grid').innerHTML=SESIONES.map(s=>`<div class="serv"><span class="g rune">${s.g}</span><h3>${s.n}</h3><p>${s.d}</p>
-  <a href="${waLink(s.msg)}" target="_blank" rel="noopener">Reservar por WhatsApp →</a></div>`).join("");
+/* ===== SESIONES (datos en sesiones.json) ===== */
+const SESIONES=[{"slug": "limpieza-casas-vehiculos", "tag": "Tameana · A distancia", "title": "Limpieza energética de casas y vehículos con Tameana", "alt": "Volante: limpieza de casas y negocios, con cristales y velas", "desc": ["¿Sentís que tu hogar o negocio está cargado de energías negativas? ¿Querés mejorar la vibración y atraer prosperidad y bienestar?", "Te ofrezco una limpieza energética a distancia para casas, locales, terrenos, negocios y vehículos. A través de cristales, velas y símbolos se purifican los ambientes y se eleva su vibración, para crear un entorno de paz, armonía, equilibrio y abundancia."], "listTitle": "Beneficios de la limpieza energética", "list": ["Elimina bloqueos, entidades y energías negativas o estancadas", "Mejora la vibración y la atmósfera del espacio", "Atrae prosperidad y bienestar, permitiendo que la energía fluya"], "msg": "Hola Piedras Alkaid! Quiero reservar turno para la limpieza energética de mi casa / negocio / vehículo con Tameana.", "img": "img/a94f04db39fc.jpg"}, {"slug": "circuitos-radionicos-arcangelicos", "tag": "Circuitos radiónicos · Arcángeles", "title": "Sesión de circuitos radiónicos arcangélicos", "alt": "Volante: circuitos radiónicos arcangélicos, las cartas de los 7 arcángeles", "desc": ["Voy a abrir portales de luz con los circuitos radiónicos de los 7 arcángeles y mi péndulo angélico.", "¿Sentís que necesitás sanar un área de tu vida? Voy a elevar tu intención a los arcángeles para que el Universo te ayude."], "listTitle": "Decime qué intención querés elevar hoy", "chips": true, "list": ["Sabiduría / Estudio", "Amor propio / Pareja", "Nuevos inicios / Comunicación familiar", "Salud / Sanación", "Abundancia / Trabajo", "Perdón / Cambios", "Protección / Justicia", "Corte de lazos"], "note": "No tenés que hacer nada, solo recibir. Escribime con el tema que elegiste.", "msg": "Hola Piedras Alkaid! Quiero reservar una sesión de circuitos radiónicos arcangélicos. La intención que quiero elevar es: ", "img": "img/747f8e2632ef.jpg"}, {"slug": "armonizacion-tameana-salush-nahi", "tag": "Tameana · Armonización", "title": "Sesión de armonización con Tameana (Salush Nahi)", "alt": "Volante: beneficios de Tameana Salush Nahi", "desc": ["Si sentís ansiedad, bloqueos, cansancio extremo o que estás cargando emociones que no son tuyas, es tu campo energético pidiendo ser liberado.", "Con la sesión de Tameana Salush Nahi, a través de la vibración de cuarzos y símbolos pleyadianos, se limpia tu aura, se alinean tus chakras y se eleva tu frecuencia para que vuelvas a sentir paz, claridad y protección."], "listTitle": "Beneficios", "list": ["Aumenta la vitalidad y la energía disponible del sistema para sanar y mejorar tu calidad de vida", "Libera y desbloquea cuerpo, mente y emociones", "Armonización energética que sincroniza los chakras, ordena y estabiliza el campo energético", "Transforma tu pensamiento y la forma de percibir la realidad, resolviendo conflictos internos y externos", "Activa tu ADN despertando información latente y modificando patrones de conducta"], "msg": "Hola Piedras Alkaid! Quiero reservar turno para una sesión de armonización con Tameana (Salush Nahi).", "img": "img/6f5a29a42a43.jpg"}, {"slug": "sesion-reiki", "tag": "Reiki", "title": "Sesión de Reiki", "alt": "Volante: beneficios del Reiki", "desc": ["Cuando tu energía está baja, tu mente no para y tu cuerpo te pide una pausa, Reiki es ese abrazo de luz que necesitás.", "En la sesión canalizamos energía vital universal para equilibrar tus chakras, bajar el estrés y la ansiedad, y activar tu propia capacidad de autosanación en cuerpo, mente y alma."], "listTitle": "Beneficios del Reiki", "list": ["Acelera la capacidad de autosanación física y emocional", "Armoniza, energiza, estabiliza y relaja", "Sube la vibración energética", "Aumenta la fuerza de voluntad", "Desbloquea emociones", "Fortalece el sistema inmunitario y mejora la acción de otros tratamientos", "Alivia el dolor físico y emocional", "Reduce el estrés ayudando a la persona a relajarse", "Reduce la ansiedad y libera emociones reprimidas", "Mejora la autoestima", "Aumenta la claridad mental y la concentración", "Aumenta la energía vital y la creatividad", "Facilita el sueño"], "msg": "Hola Piedras Alkaid! Quiero reservar turno para una sesión de Reiki.", "img": "img/87f641be97ed.jpg"}, {"slug": "manifestacion-tameana-puja", "tag": "Tameana · Manifestación", "dur": "30 minutos", "title": "Sesión de manifestación con Tameana (Puja)", "alt": "Volante: beneficios de Tameana Puja, sesión abre caminos", "desc": ["Sesión de abre caminos. ¿Te gustaría hacer realidad tus intenciones? Te invito a una sesión de Tameana Puja para alinear tu energía y vibrar alto.", "Solo necesitás 30 minutos: una meditación guiada cortita, perfecta para recargar pilas rápido sin quitarte mucho tiempo."], "listTitle": "Beneficios", "list": ["Eleva la energía y abre caminos", "Trae equilibrio y armonía", "Elimina creencias limitantes y bloqueos que te impiden avanzar", "Está enfocado a solucionar temas concretos y atraer circunstancias favorables", "Se trabaja con una intención específica", "Restablece la conexión con tu presencia divina, encontrando equilibrio y paz en tu vida", "Te libera de influencias negativas, energías estancadas y cargas que te limitan"], "note": "Para la sesión debemos saber qué queremos desbloquear y qué queremos atraer.", "msg": "Hola Piedras Alkaid! Quiero reservar turno para una sesión de manifestación con Tameana (Puja). Lo que quiero desbloquear y atraer es: ", "img": "img/5b9e2d5d22c9.jpg"}, {"slug": "sanacion-tameana-origenes", "tag": "Tameana · Sanación", "title": "Sesión de sanación con Tameana (Orígenes)", "alt": "Volante: beneficios de Tameana Orígenes", "desc": ["Tameana Orígenes te lleva al instante exacto donde tu alma eligió el dolor, para liberar ese pacto inconsciente que hoy te bloquea.", "En esta sesión sanamos tu árbol genealógico, tu niño interior y tu origen estelar para que dejes de repetir historias y empieces a crear tu propia realidad."], "listTitle": "Beneficios", "list": ["Elevación de las defensas del organismo", "Reactivación de la glándula Timo", "Alivio de crisis de pánico y angustia", "Sanación y liberación de bloqueos emocionales", "Apertura de los caminos de la energía", "Elevación de la frecuencia vibratoria", "Conexión con nuestros cuerpos multidimensionales", "Reintegración de los fragmentos de nuestra alma"], "msg": "Hola Piedras Alkaid! Quiero reservar turno para una sesión de sanación con Tameana (Orígenes).", "img": "img/ac3cb11ac010.jpg"}, {"slug": "limpieza-personal-tameana-hama", "tag": "Tameana · Limpieza", "title": "Limpieza energética con Tameana (H'ama)", "alt": "Volante: limpieza energética, figura meditando con los chakras iluminados", "desc": ["¡Liberá tu energía! Descubrí el poder de la limpieza energética personal con Tameana H'ama."], "listTitle": "Qué logra", "list": ["Purifica y equilibra tus chakras", "Elimina bloqueos y energías negativas", "Conecta con tu esencia divina", "Te hace experimentar la transformación y sentir la paz y la armonía en tu ser"], "msg": "Hola Piedras Alkaid! Quiero reservar turno para una limpieza energética personal con Tameana (H'ama).", "img": "img/106a510760f6.jpg"}, {"slug": "pendulo-hebreo-completa", "tag": "Péndulo hebreo", "title": "Sesión completa de péndulo hebreo", "alt": "Volante: sesión completa de péndulo hebreo, capas del aura y chakras", "desc": ["¿Pensás que te están trabajando con magia ritual, brujerías o maldiciones? ¿Estás rodeada de personas tóxicas y envidiosas? ¿Necesitás limpiar tu aura de energías negativas?", "Pedí tu turno para estar limpia y protegida por los arcángeles."], "listTitle": "Incluye", "list": ["Informe energético completo"], "msg": "Hola Piedras Alkaid! Quiero reservar turno para una sesión completa de péndulo hebreo.", "img": "img/224baeba55b3.jpg"}, {"slug": "pendulo-hebreo-chakras", "tag": "Péndulo hebreo", "title": "Sesión de chakras con péndulo hebreo", "alt": "Volante: sesión de chakras con péndulo hebreo", "desc": ["Sesión de armonización integral con péndulo hebreo, para contribuir a una mayor sensación de bienestar, favorecer la claridad mental y restaurar tu flujo vital.", "A través de la irradiación de letras hebreas sobre tus 7 centros energéticos, el péndulo trabaja para favorecer el equilibrio energético, acompañar procesos de liberación emocional, promover la calma profunda y potenciar tu conexión interior, desbloqueando las capas de tu aura que sostienen bloqueos y memorias densas."], "msg": "Hola Piedras Alkaid! Quiero reservar turno para una sesión de chakras con péndulo hebreo.", "img": "img/0005f0d2576e.jpg"}];
+document.getElementById('ses-list').innerHTML=SESIONES.map(s=>`<article class="ses" id="ses-${s.slug}"><div class="ses-ph"><img loading="lazy" src="${s.img}" alt="${s.alt||s.title}"></div>
+  <div class="ses-body"><span class="eyebrow">${s.tag}</span><h2>${s.title}</h2>
+  ${s.dur?`<span class="pill"><span class="rune">ᛉ</span>Dura ${s.dur}</span>`:''}
+  ${(s.desc||[]).map(p=>`<p>${p}</p>`).join('')}
+  ${s.list&&s.list.length?`<div class="ses-sub">${s.listTitle||'Beneficios'}</div>${s.chips?`<div class="ses-chips">${s.list.map(x=>`<span>${x}</span>`).join('')}</div>`:`<ul class="ses-ul">${s.list.map(x=>`<li><span class="rune">ᛜ</span><span>${x}</span></li>`).join('')}</ul>`}`:''}
+  ${s.note?`<p class="ses-quote">${s.note}</p>`:''}
+  <div class="ses-cta"><a class="btn btn-primary" target="_blank" rel="noopener" href="${waLink(s.msg)}">Reservar turno</a></div></div></article>`).join("");
 
 /* ===== BITÁCORA ===== */
 const EXTRA=[
@@ -1527,7 +1557,7 @@ const FAQ=[
 document.getElementById('faq-list').innerHTML=FAQ.map(([q,a])=>`<details><summary>${q}</summary><div class="a">${a}</div></details>`).join("");
 
 /* ===== router ===== */
-const TITLES={home:"Piedras Alkaid — Runas artesanales en serio, no en serie",tienda:"Tienda — Runas, dijes y talismanes · Piedras Alkaid",talleres:"Talleres virtuales de runas, Reiki y sanación · Piedras Alkaid",sesiones:"Sesiones de sanación y consulta · Piedras Alkaid",bitacora:"Bitácora — runas, oráculos y piedras · Piedras Alkaid",proceso:"Cómo hacemos las runas · Piedras Alkaid",quienes:"Quiénes somos · Piedras Alkaid",mayorista:"Venta mayorista para revendedores y santerías · Piedras Alkaid"};
+const TITLES={home:"Piedras Alkaid — Runas artesanales en serio, no en serie",tienda:"Tienda — Runas, dijes y talismanes · Piedras Alkaid",talleres:"Talleres virtuales de runas, Reiki y sanación · Piedras Alkaid",sesiones:"Sesiones de sanación a distancia: Tameana, Reiki y péndulo hebreo · Piedras Alkaid",bitacora:"Bitácora — runas, oráculos y piedras · Piedras Alkaid",proceso:"Cómo hacemos las runas · Piedras Alkaid",quienes:"Quiénes somos · Piedras Alkaid",mayorista:"Venta mayorista para revendedores y santerías · Piedras Alkaid"};
 const NAVMAP={home:'#/',tienda:'#/tienda',talleres:'#/talleres',sesiones:'#/sesiones',bitacora:'#/bitacora',proceso:'#/proceso',quienes:'#/quienes',mayorista:'#/mayorista'};
 function setTitle(t){document.title=t;}
 const _reduceMo=matchMedia('(prefers-reduced-motion:reduce)').matches;
